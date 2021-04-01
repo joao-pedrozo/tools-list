@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -11,6 +11,8 @@ export const Title = styled.h1``;
 
 export const InlineTooling = styled.div`
   display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 `;
 
 export const InlineToolingSearchArea = styled.div``;

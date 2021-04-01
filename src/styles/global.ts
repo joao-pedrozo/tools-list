@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     
-    input, textarea {
+    input, textarea, button {
       &:focus {
         outline: none;
       }
