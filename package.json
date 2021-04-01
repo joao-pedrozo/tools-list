@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
     "@types/styled-components": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -15,6 +16,7 @@
     "next": "10.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {

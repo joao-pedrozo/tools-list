@@ -1,7 +1,14 @@
-import { FC } from "react";
+import { FC } from 'react';
+import * as S from './styles';
+import { AiOutlineSearch } from 'react-icons/ai';
 
-const Search: FC = () => {
-  return <h1>teste</h1>;
+const Search = () => {
+  return (
+    <S.Wrapper>
+      <AiOutlineSearch color="#B1ADB9" />
+      <S.Input placeholder="Digite o que está procurando..." />
+    </S.Wrapper>
+  );
 };
 
 export default Search;
