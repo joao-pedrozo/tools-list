@@ -6,6 +6,21 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
+    html, 
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    ul, li {
+      list-style: none;
+    }
     
     input, textarea, button {
       &:focus {
