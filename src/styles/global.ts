@@ -8,9 +8,11 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html, 
-    body {
+    body,
+    #__next {
       height: 100%;
       width: 100%;
+      overflow: auto;
     }
 
     a {
@@ -20,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
 
     ul, li {
       list-style: none;
+    }
+
+    button {
+      cursor: pointer;
     }
     
     input, textarea, button {

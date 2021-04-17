@@ -3,16 +3,18 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 65px;
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 25px;
+  margin-top: 65px;
 
   .card-wrapper {
     margin-top: 20px;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
     padding: 10px;
   }
 `;
@@ -38,7 +40,9 @@ export const CardHeader = styled.div`
   justify-content: space-between;
 `;
 
-export const ToolTitle = styled.a``;
+export const ToolTitle = styled.a`
+  color: red;
+`;
 
 export const RemoveTool = styled.a`
   display: flex;
@@ -54,5 +58,10 @@ export const ToolTagsWrapper = styled.div`
 
   strong {
     margin-right: 10px;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
   }
 `;

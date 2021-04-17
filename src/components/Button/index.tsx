@@ -1,11 +1,12 @@
+import { ButtonHTMLAttributes } from 'react';
 import * as S from './styles';
 
-export interface Props {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-const Button = ({ children }: Props) => {
-  return <S.Button>{children}</S.Button>;
+const Button = ({ children, ...rest }: Props) => {
+  return <S.Button {...rest}>{children}</S.Button>;
 };
 
 export default Button;
