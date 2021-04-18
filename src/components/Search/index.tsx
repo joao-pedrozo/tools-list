@@ -24,7 +24,7 @@ const Search = ({ isTagOnlySearch = false }: SearchProps) => {
     <S.Wrapper>
       <AiOutlineSearch color="#B1ADB9" size={24} />
       <S.Input
-        placeholder="Digite o que está procurando..."
+        placeholder="Search what you are looking for"
         onChange={handleChange}
         value={value}
       />

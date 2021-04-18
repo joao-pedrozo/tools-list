@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
-  width: 580px;
+  width: 100%;
   background: #fff;
   padding: 15px 35px;
   border-radius: 5px;
@@ -11,7 +11,11 @@ export const ModalTitle = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 25px;
-  margin-left: -15px;
+
+  span {
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.ink};
+  }
 `;
 
 export const ButtonWrapper = styled.div`

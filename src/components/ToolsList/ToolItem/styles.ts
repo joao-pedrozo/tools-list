@@ -9,6 +9,7 @@ export const ToolTitle = styled.a``;
 
 export const RemoveTool = styled.a`
   display: flex;
+  align-items: center;
 `;
 
 export const ToolDescription = styled.p`

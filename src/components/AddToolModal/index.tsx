@@ -42,7 +42,6 @@ const AddToolModal = ({ showModal, setShowModal }: Props) => {
     <BaseModal showModal={showModal} setShowModal={setShowModal}>
       <S.ModalWrapper>
         <S.ModalTitle>
-          <HiPlusSm size={24} />
           <span>Add new tool</span>
         </S.ModalTitle>
         <Input

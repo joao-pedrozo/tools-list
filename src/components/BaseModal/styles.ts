@@ -13,7 +13,8 @@ export const Background = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  position: absolute;
   top: 50px;
   z-index: 50;
+  width: 100%;
+  margin: 0 50px;
 `;
