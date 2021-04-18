@@ -2,6 +2,7 @@
   Very Useful Tools to Remember 
 </h1>
 
+[![wakatime](https://wakatime.com/badge/github/joao-pedrozo/tools-list.svg)](https://wakatime.com/badge/github/joao-pedrozo/tools-list)
 ## About the project
 
 List your favorite tools and manage them by deleting or adding others.
@@ -40,7 +41,7 @@ $ cd tools-list
 $ yarn
 
 # Start the client
-$ yarn start
+$ yarn dev
 ```
 
 ```bash
