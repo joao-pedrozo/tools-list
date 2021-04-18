@@ -10,7 +10,8 @@ export const Background = styled.div`
   align-items: center;
 `;
 
-export const ModalWrapper = styled.div`
-  width: 200px;
-  height: 200px;
+export const ContentWrapper = styled.div`
+  position: absolute;
+  top: 50px;
+  left: 50;
 `;

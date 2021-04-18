@@ -1,16 +1,15 @@
 import * as S from '../styles/home';
 import React, { useEffect, useState } from 'react';
-import { GrFormClose } from 'react-icons/gr';
 
 import Search from '../components/Search';
 import Checkbox from '../components/Checkbox';
 import Button from '../components/Button';
-import Card from '../components/Card';
 import AddToolModal from '../components/AddToolModal';
+import ToolsList from '../components/ToolsList';
 
 import api from '../services/api';
 
-interface Tool {
+export interface Tool {
   id: number;
   title: string;
   link: string;
@@ -27,7 +26,6 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       const response = await api.get('/tools');
-      console.log(response);
       setTools(response.data);
     }
     fetchData();
@@ -62,31 +60,7 @@ export default function Home() {
 
           <Button onClick={handleOnAdd}>Add</Button>
         </S.InlineTooling>
-        <ul>
-          {tools.map(tool => (
-            <li key={tool.id}>
-              <Card>
-                <S.CardHeader>
-                  <S.ToolTitle href={tool.link}>{tool.title}</S.ToolTitle>
-                  <S.RemoveTool>
-                    <GrFormClose size={20} />
-                    <span>Remove</span>
-                  </S.RemoveTool>
-                </S.CardHeader>
-                <S.ToolDescription>{tool.description}</S.ToolDescription>
-                <S.ToolTagsWrapper>
-                  <ul>
-                    {tool.tags.map(tag => (
-                      <li key={tag}>
-                        <strong>{`#${tag}`}</strong>
-                      </li>
-                    ))}
-                  </ul>
-                </S.ToolTagsWrapper>
-              </Card>
-            </li>
-          ))}
-        </ul>
+        <ToolsList tools={tools} />
       </S.ContentWrapper>
       <AddToolModal showModal={showModal} setShowModal={setShowModal} />
     </S.Wrapper>

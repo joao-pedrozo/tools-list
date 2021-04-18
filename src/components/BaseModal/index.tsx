@@ -8,7 +8,16 @@ interface Props {
 }
 
 const BaseModal = ({ showModal, setShowModal, children }: Props) => {
-  return <>{showModal && <S.Background>{children}</S.Background>}</>;
+  return (
+    <>
+      {showModal && (
+        <>
+          <S.Background onClick={() => setShowModal(false)} />
+          <S.ContentWrapper>{children}</S.ContentWrapper>
+        </>
+      )}
+    </>
+  );
 };
 
 export default BaseModal;
