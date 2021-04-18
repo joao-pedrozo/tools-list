@@ -20,7 +20,7 @@ export interface Tool {
 export default function Home() {
   const [value, setValue] = useState('');
   const [isChecked, setIsChecked] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showAddToolModal, setShowAddToolModal] = useState(false);
   const [tools, setTools] = useState<Tool[]>([]);
 
   useEffect(() => {
@@ -39,8 +39,8 @@ export default function Home() {
     setIsChecked(!isChecked);
   };
 
-  const handleOnAdd = () => {
-    setShowModal(prev => !prev);
+  const handleAddTool = () => {
+    setShowAddToolModal(prev => !prev);
   };
 
   return (
@@ -58,11 +58,14 @@ export default function Home() {
             />
           </S.InlineToolingSearchArea>
 
-          <Button onClick={handleOnAdd}>Add</Button>
+          <Button onClick={handleAddTool}>Add</Button>
         </S.InlineTooling>
         <ToolsList tools={tools} />
       </S.ContentWrapper>
-      <AddToolModal showModal={showModal} setShowModal={setShowModal} />
+      <AddToolModal
+        showModal={showAddToolModal}
+        setShowModal={setShowAddToolModal}
+      />
     </S.Wrapper>
   );
 }
