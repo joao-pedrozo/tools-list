@@ -5,9 +5,7 @@ export const CardHeader = styled.div`
   justify-content: space-between;
 `;
 
-export const ToolTitle = styled.a`
-  color: red;
-`;
+export const ToolTitle = styled.a``;
 
 export const RemoveTool = styled.a`
   display: flex;

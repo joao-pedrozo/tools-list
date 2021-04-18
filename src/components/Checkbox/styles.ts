@@ -4,6 +4,7 @@ import { CheckboxProps } from '.';
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 5px;
 `;
 
 export const Checkbox = styled.input`

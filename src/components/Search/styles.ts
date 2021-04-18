@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   background-color: #f5f4f6;
   border-radius: 5px;
   padding: 10px 13px;
+  margin-right: 5px;
 `;
 
 export const Input = styled.input`

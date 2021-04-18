@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import * as S from './styles';
 
 interface Props {
@@ -8,12 +8,21 @@ interface Props {
 }
 
 const BaseModal = ({ showModal, setShowModal, children }: Props) => {
+  const backgroundRef = useRef();
+
+  const closeModal = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (backgroundRef.current === event.target) {
+      setShowModal(false);
+    }
+  };
+
   return (
     <>
       {showModal && (
         <>
-          <S.Background onClick={() => setShowModal(false)} />
-          <S.ContentWrapper>{children}</S.ContentWrapper>
+          <S.Background ref={backgroundRef} onClick={closeModal}>
+            <S.ContentWrapper>{children}</S.ContentWrapper>
+          </S.Background>
         </>
       )}
     </>
