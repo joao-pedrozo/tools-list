@@ -6,7 +6,7 @@ import Input from '../Input';
 import TextArea from '../TextArea';
 import Button from '../Button';
 
-import api from '../../services/api';
+import api from '@/services/api';
 
 import * as S from './styles';
 
