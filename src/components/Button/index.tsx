@@ -3,7 +3,7 @@ import * as S from './styles';
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  kind?: 'primary' | 'danger';
+  kind?: 'primary' | 'secondary';
 }
 
 const Button = ({ children, kind = 'primary', ...rest }: Props) => {

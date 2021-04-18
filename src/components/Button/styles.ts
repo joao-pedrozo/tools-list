@@ -1,18 +1,20 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
+import { shade, lighten } from 'polished';
 
 import { Props } from './';
 
 interface StyledButtonProps {
-  kind: 'primary' | 'danger';
+  kind: 'primary' | 'secondary';
 }
 
 const colors = {
   primary: {
     color: '#365df0',
   },
-  danger: {
-    color: '#F95E5A',
+  get secondary() {
+    return {
+      color: lighten(0.2, this.primary.color),
+    };
   },
 };
 

@@ -41,6 +41,7 @@ const ToolItem = ({ tool }: ToolProps) => {
       <RemoveToolmodal
         setShowModal={setShowRemoveToolModal}
         showModal={showRemoveToolModal}
+        item={tool}
       />
     </>
   );

@@ -19,18 +19,33 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  font-size: ${({ theme }) => theme.font.sizes.huge};
+`;
 
 export const InlineTooling = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+
+  button {
+    max-height: 44px;
+  }
 `;
 
 export const InlineToolingSearchArea = styled.div`
   display: flex;
+  flex-direction: column;
+
+  @media (max-width: 576px) {
+    div:nth-child(2) {
+      margin-top: 5px;
+    }
+  }
 `;
 
 export const InlineToolingAddArea = styled.div``;
 
-export const Subtitle = styled.h2``;
+export const Subtitle = styled.h2`
+  font-size: ${({ theme }) => theme.font.sizes.xxlarge};
+`;

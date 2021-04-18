@@ -7,7 +7,7 @@ import Button from '../components/Button';
 import AddToolModal from '../components/AddToolModal';
 import ToolsList from '../components/ToolsList';
 
-import api from '../services/api';
+import { useTools } from '../hooks/tools';
 
 export interface Tool {
   id: number;
@@ -18,22 +18,13 @@ export interface Tool {
 }
 
 export default function Home() {
-  const [value, setValue] = useState('');
   const [isChecked, setIsChecked] = useState(false);
   const [showAddToolModal, setShowAddToolModal] = useState(false);
-  const [tools, setTools] = useState<Tool[]>([]);
-
+  const { fetchTools, tools } = useTools();
   useEffect(() => {
-    async function fetchData() {
-      const response = await api.get('/tools');
-      setTools(response.data);
-    }
-    fetchData();
+    fetchTools();
+    console.log(tools);
   }, []);
-
-  const onInputChange = (event: React.FormEvent<HTMLInputElement>) => {
-    setValue(event.currentTarget.value);
-  };
 
   const onCheckboxChange = (event: React.FormEvent<HTMLInputElement>) => {
     setIsChecked(!isChecked);
@@ -50,9 +41,9 @@ export default function Home() {
         <S.Subtitle>Very Useful Tools to Remember</S.Subtitle>
         <S.InlineTooling>
           <S.InlineToolingSearchArea>
-            <Search value={value} handleChange={onInputChange} />
+            <Search isTagOnlySearch={isChecked} />
             <Checkbox
-              labelText="teste"
+              labelText="Search in tags only"
               checked={isChecked}
               handleChange={onCheckboxChange}
             />
@@ -60,7 +51,11 @@ export default function Home() {
 
           <Button onClick={handleAddTool}>Add</Button>
         </S.InlineTooling>
-        <ToolsList tools={tools} />
+        {tools.length ? (
+          <ToolsList tools={tools} />
+        ) : (
+          <span style={{ marginTop: '10px' }}>No tools founded.</span>
+        )}
       </S.ContentWrapper>
       <AddToolModal
         showModal={showAddToolModal}

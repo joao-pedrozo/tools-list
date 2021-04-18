@@ -11,7 +11,7 @@ const ToolsList = ({ tools }: ToolsListProps) => {
   return (
     <ul>
       {tools.map(tool => (
-        <ToolItem tool={tool} />
+        <ToolItem tool={tool} key={tool.id} />
       ))}
     </ul>
   );

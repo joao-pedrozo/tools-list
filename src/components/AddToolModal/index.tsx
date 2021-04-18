@@ -7,6 +7,7 @@ import TextArea from '../TextArea';
 import Button from '../Button';
 
 import api from '@/services/api';
+import { useTools } from '@/hooks/tools';
 
 import * as S from './styles';
 
@@ -21,6 +22,8 @@ const AddToolModal = ({ showModal, setShowModal }: Props) => {
   const [toolDescription, setToolDescription] = useState('');
   const [toolTags, setToolTags] = useState('');
 
+  const { fetchTools } = useTools();
+
   const handleOnClick = async () => {
     const splittedTags = toolTags.split(' ');
     if (toolName && toolLink && toolDescription && toolTags) {
@@ -31,6 +34,8 @@ const AddToolModal = ({ showModal, setShowModal }: Props) => {
         tags: splittedTags,
       });
     }
+    fetchTools();
+    setShowModal(false);
   };
 
   return (

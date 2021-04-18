@@ -24,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-      font-family: 'Source Sans Pro';
+      font-family: ${({ theme }) => theme.font.family};
     }
 
     html, 
@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
       height: 100%;
       width: 100%;
       overflow: auto;
+      font-size: ${({ theme }) => theme.font.sizes.small};
     }
 
     a {
@@ -53,6 +54,11 @@ const GlobalStyles = createGlobalStyle`
         outline: none;
       }
     }
-`;
+
+    path, g, svg {
+      stroke: currentColor;
+      fill: currentColor; 
+     }
+     `;
 
 export default GlobalStyles;

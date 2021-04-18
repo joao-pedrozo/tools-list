@@ -1,11 +1,17 @@
-import GlobalStyles from "../styles/global";
+import GlobalStyles from '../styles/global';
+import { ThemeProvider } from 'styled-components';
+import { ToolsProvider } from '../hooks/tools';
+
+import theme from '../styles/theme';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Component {...pageProps} />
-      <GlobalStyles />
-    </>
+    <ThemeProvider theme={theme}>
+      <ToolsProvider>
+        <Component {...pageProps} />
+        <GlobalStyles />
+      </ToolsProvider>
+    </ThemeProvider>
   );
 }
 
