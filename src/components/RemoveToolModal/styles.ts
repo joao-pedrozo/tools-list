@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { GrFormClose } from 'react-icons/gr';
 
 export const ModalWrapper = styled.div`
-  width: 400px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background: #fff;
   padding: 15px 35px;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.border.radius};
 `;
 
 export const ModalTitleWrapper = styled.div`

@@ -23,7 +23,7 @@ export const Button = styled.button<StyledButtonProps>`
   background-color: ${props => colors[props.kind].color};
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.border.radius};
   transition: background-color 0.2s;
 
   &:hover {

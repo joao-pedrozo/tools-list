@@ -15,7 +15,7 @@ export const TextAreaWrapper = styled.div`
   display: flex;
   border: 1px solid #ebeaed;
   background-color: #f5f4f6;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.border.radius};
   padding: 10px 13px;
   margin-bottom: 25px;
 

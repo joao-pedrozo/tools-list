@@ -4,7 +4,7 @@ export const ModalWrapper = styled.div`
   width: 100%;
   background: #fff;
   padding: 15px 35px;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.border.radius};
 `;
 
 export const ModalTitle = styled.div`

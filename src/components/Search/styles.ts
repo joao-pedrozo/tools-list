@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   display: flex;
   border-color: #ebeaed;
   background-color: #f5f4f6;
-  border-radius: 5px;
+  border-radius: ${({ theme }) => theme.border.radius};
   padding: 10px 13px;
 `;
 
