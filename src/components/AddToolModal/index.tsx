@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { HiPlusSm } from 'react-icons/hi';
 
 import BaseModal from '../BaseModal';
 import Input from '../Input';
@@ -27,7 +26,7 @@ const AddToolModal = ({ showModal, setShowModal }: Props) => {
   const handleOnClick = async () => {
     const splittedTags = toolTags.split(' ');
     if (toolName && toolLink && toolDescription && toolTags) {
-      const result = await api.post('/tools', {
+      await api.post('/tools', {
         title: toolName,
         link: toolLink,
         description: toolDescription,
@@ -35,6 +34,10 @@ const AddToolModal = ({ showModal, setShowModal }: Props) => {
       });
     }
     fetchTools();
+    setToolName('');
+    setToolLink('');
+    setToolDescription('');
+    setToolTags('');
     setShowModal(false);
   };
 
@@ -43,6 +46,7 @@ const AddToolModal = ({ showModal, setShowModal }: Props) => {
       <S.ModalWrapper>
         <S.ModalTitle>
           <span>Add new tool</span>
+          <S.CloseButton size={20} onClick={() => setShowModal(false)} />
         </S.ModalTitle>
         <Input
           id="tool-name"

@@ -1,3 +1,4 @@
+import { GrFormClose } from 'react-icons/gr';
 import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
@@ -10,12 +11,18 @@ export const ModalWrapper = styled.div`
 export const ModalTitle = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 25px;
 
   span {
     font-weight: 600;
     color: ${({ theme }) => theme.colors.ink};
   }
+`;
+
+export const CloseButton = styled(GrFormClose)`
+  cursor: pointer;
+  color: #8f8a9b;
 `;
 
 export const ButtonWrapper = styled.div`

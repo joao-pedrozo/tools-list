@@ -30,7 +30,7 @@ const RemoveToolModal = ({
       <S.ModalWrapper>
         <S.ModalTitleWrapper>
           <span>Remove tool</span>
-          <S.CloseButton size={20} />
+          <S.CloseButton size={20} onClick={() => setShowModal(false)} />
         </S.ModalTitleWrapper>
         <S.ConfirmationText>
           Are you sure you want to remove <b>{item.title}?</b>

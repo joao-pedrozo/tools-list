@@ -3,6 +3,7 @@ import { GrFormClose } from 'react-icons/gr';
 
 export const ModalWrapper = styled.div`
   width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -19,13 +20,12 @@ export const ModalTitleWrapper = styled.div`
     font-weight: 600;
     color: ${({ theme }) => theme.colors.ink};
   }
-
-  svg {
-    color: #8f8a9b;
-  }
 `;
 
-export const CloseButton = styled(GrFormClose)``;
+export const CloseButton = styled(GrFormClose)`
+  cursor: pointer;
+  color: #8f8a9b;
+`;
 
 export const ConfirmationText = styled.span`
   color: #8f8a9b;

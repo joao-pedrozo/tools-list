@@ -14,7 +14,8 @@ export const Background = styled.div`
 
 export const ContentWrapper = styled.div`
   top: 50px;
-  z-index: 50;
+  display: flex;
+  justify-content: center;
   width: 100%;
   margin: 0 50px;
 `;

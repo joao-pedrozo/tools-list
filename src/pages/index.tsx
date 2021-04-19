@@ -23,7 +23,6 @@ export default function Home() {
   const { fetchTools, tools } = useTools();
   useEffect(() => {
     fetchTools();
-    console.log(tools);
   }, []);
 
   const onCheckboxChange = (event: React.FormEvent<HTMLInputElement>) => {
